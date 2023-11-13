@@ -1,0 +1,280 @@
+body {
+  background-color: antiquewhite;
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* 25 caves */
+.dung_images img {
+  border-radius: 15px;
+  position: fixed;
+  width: 100px;
+  height: 100px;
+}
+
+/* message panel */
+#message {
+  position: fixed;
+  top: 560px;
+  left: 10px;
+  width: 540px;
+  height: 160px;
+}
+
+/* side panel */
+#sidepanel {
+  position: fixed;
+  top: 10px;
+  left: 565px;
+  width: 380px;
+  height: 700px;
+  border-radius: 25px;
+
+}
+
+#monster {
+  position: fixed;
+  top: 65px;
+  left: 625px;
+  width: 260px;
+  height: 150px;
+
+}
+
+#roompanel {
+  position: fixed;
+  top: 20px;
+  left: 580px;
+  width: 350px;
+  height: 330px;
+}
+
+
+/* message words */
+#message_txt {
+  position: fixed;
+  top: 590px;
+  left: 30px;
+  width: 500px;
+  text-align: center;
+  font-size: 30px;
+}
+
+#level_btn {
+  position: fixed;
+  top: 570px;
+  left: 130px;
+  width: 340px;
+  height: 40px;
+  border-radius: 15px;
+
+}
+
+/* level */
+#level_hd {
+  position: fixed;
+  top: 545px;
+  left: 130px;
+  width: 340px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.dung_buttons button {
+  position: fixed;
+  background-color: beige;
+  color: brown;
+  padding: 5px 9px;
+  font-size: 26px;
+  border-radius: 15px;
+
+
+}
+
+#butt_up {
+  top: 555px;
+  left: 831px;
+  padding: 5px 15px;
+}
+
+#butt_rt {
+  top: 605px;
+  left: 881px;
+}
+
+#butt_dn {
+  top: 655px;
+  left: 831px;
+  padding: 5px 15px;
+}
+
+#butt_lf {
+  top: 605px;
+  left: 780px;
+}
+
+#compass {
+  position: fixed;
+  top: 545px;
+  left: 774px;
+  width: 160px;
+  height: 160px;
+}
+
+#don {
+  position: fixed;
+  width: 85px;
+  height: 85px;
+}
+
+#slot1 {
+  position: fixed;
+  top: 540px;
+  left: 575px;
+  width: 85px;
+  height: 85px;
+}
+
+#slot2 {
+  position: fixed;
+  top: 540px;
+  left: 660px;
+  width: 85px;
+  height: 85px;
+}
+
+#slot3 {
+  position: fixed;
+  top: 620px;
+  left: 575px;
+  width: 85px;
+  height: 85px;
+}
+
+#slot4 {
+  position: fixed;
+  top: 620px;
+  left: 660px;
+  width: 85px;
+  height: 85px;
+}
+
+#skill_panel {
+  position: fixed;
+  border-radius: 25px;
+  top: 420px;
+  left: 580px;
+  width: 110px;
+  height: 110px;
+}
+
+#health_panel {
+  position: fixed;
+  border-radius: 25px;
+  top: 420px;
+  left: 700px;
+  width: 110px;
+  height: 110px;
+}
+
+#cash_panel {
+  position: fixed;
+  border-radius: 25px;
+  top: 420px;
+  left: 820px;
+  width: 110px;
+  height: 110px;
+}
+
+#skill_head {
+  position: fixed;
+  top: 400px;
+  left: 606px;
+  font-size: 25px;
+  color: beige;
+}
+
+#skill_val {
+  position: fixed;
+  top: 380px;
+  left: 598px;
+  font-size: 70px;
+  color: beige;
+}
+
+#health_head {
+  position: fixed;
+  top: 400px;
+  left: 712px;
+  font-size: 25px;
+  color: beige;
+}
+
+#health_val {
+  position: fixed;
+  top: 380px;
+  left: 718px;
+  font-size: 70px;
+  color: beige;
+}
+
+#cash_head {
+  position: fixed;
+  top: 400px;
+  left: 846px;
+  font-size: 25px;
+  color: beige;
+}
+
+#cash_val {
+  position: fixed;
+  top: 380px;
+  left: 838px;
+  font-size: 70px;
+  color: beige;
+}
+
+#mon_skill {
+  position: fixed;
+  top: 180px;
+  left: 670px;
+  font-size: 40px;
+  color: black;
+}
+
+#mon_health {
+  position: fixed;
+  top: 230px;
+  left: 655px;
+  font-size: 40px;
+  color: black;
+}
+
+#butta {
+  position: fixed;
+  border-radius: 10px;
+  top: 360px;
+  left: 580px;
+  width: 170px;
+  height: 50px;
+  font-size: xx-large;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+
+
+}
+
+#buttb {
+  position: fixed;
+  border-radius: 10px;
+  top: 360px;
+  left: 760px;
+  width: 170px;
+  height: 50px;
+  font-size: xx-large;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+
+}
