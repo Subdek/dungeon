@@ -51,7 +51,7 @@ reset(); start();
 
 
 function start() {
-  document.getElementById("message").src = "https://github.com/Subdek/dungeon/blob/a241dfbf6d79a2c698602dd8bd830a7c14cb0b8c/assets/message.png";
+  document.getElementById("message").src = "message.png";
   document.getElementById("level_btn").src = "orange-btn.png";
   document.getElementById("sidepanel").src = "panel_new.png"
   document.getElementById("roompanel").src = "message.png"
