@@ -25,7 +25,7 @@ const room_map = [0,
   1, 1, 1, 1, 1,
   1, 1, 1, 1, 3]
 
-const room_name = ["https://github.com/Subdek/dungeon/blob/cd9e1d94c100810800dd73711bb926f51528c30e/brick%20copy.png", 
+const room_name = ["brick.png", 
                    "gold.png", "redsquare.png", "blacksquare.png", "greensquare.png", "spiral.png"]
 
 
