@@ -62,7 +62,7 @@ function start() {
   document.getElementById("compass").src = "compass.png";
   document.getElementById("health_panel").src = "assets/healthbox.png";
   document.getElementById("skill_panel").src = "skillbox.png";
-  document.getElementById("cash_panel").src = "cashbox.png";
+  document.getElementById("cash_panel").src = "assets/cashbox.png";
 
   document.getElementById("pic1").style.top = "10px";
   document.getElementById("pic1").style.left = "10px";
