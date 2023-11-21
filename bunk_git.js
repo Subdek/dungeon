@@ -27,7 +27,7 @@ const room_map = [0,
   1, 1, 2, 1, 2,
   1, 5, 1, 2, 3]
 
-const room_name = ["brick.png", "assets/gold.png", "assets/redsquare.png", "assets/blacksquare.png", "assets/greensquare.png", "assets/redsquare.png", "assets/gold.png", "assets/gold.png", "assets/gold.png", "assets/spiral.png"]
+const room_name = ["assets/brick.png", "assets/gold.png", "assets/redsquare.png", "assets/blacksquare.png", "assets/greensquare.png", "assets/redsquare.png", "assets/gold.png", "assets/gold.png", "assets/gold.png", "assets/spiral.png"]
 
 const mx = [
   "Welcome to the Dungeon! <br>It's gonna get messy! Let's go!",
