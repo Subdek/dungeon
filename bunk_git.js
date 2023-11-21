@@ -79,7 +79,7 @@ function start() {
   document.getElementById("buttb").innerHTML = "&#9635";
 
 
-  for (i = 2; i < 26; i++) {
+  for (i = 1; i < 26; i++) {
     xtop = (don_top[i] - 15) + "px";
     document.getElementById("pic" + i).style.top = xtop;
 
