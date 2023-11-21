@@ -25,7 +25,7 @@ const room_map = [0,
   1, 1, 1, 1, 1,
   1, 1, 1, 1, 3]
 
-const room_name = ["brick.png", "gold.png", "redsquare.png", "blacksquare.png", "greensquare.png", "spiral.png"]
+const room_name = ["assets/brick.png", "assets/gold.png", "assets/redsquare.png", "assets/blacksquare.png", "assets/greensquare.png", "assets/spiral.png"]
 
 
 const mx = [
@@ -51,17 +51,17 @@ reset(); start();
 
 
 function start() {
-  document.getElementById("message").src = "message.png";
-  document.getElementById("level_btn").src = "orange-btn.png";
-  document.getElementById("sidepanel").src = "panel_new.png"
-  document.getElementById("roompanel").src = "message.png"
-  document.getElementById("slot1").src = "potion_slot.png";
-  document.getElementById("slot2").src = "potion_slot.png";
-  document.getElementById("slot3").src = "potion_slot.png";
-  document.getElementById("slot4").src = "potion_slot.png";
-  document.getElementById("compass").src = "compass.png";
+  document.getElementById("message").src = "assets/message.png";
+  document.getElementById("level_btn").src = "assets/orange-btn.png";
+  document.getElementById("sidepanel").src = "assets/panel_new.png"
+  document.getElementById("roompanel").src = "assets/message.png"
+  document.getElementById("slot1").src = "assets/potion_slot.png";
+  document.getElementById("slot2").src = "assets/potion_slot.png";
+  document.getElementById("slot3").src = "assets/potion_slot.png";
+  document.getElementById("slot4").src = "assets/potion_slot.png";
+  document.getElementById("compass").src = "assets/compass.png";
   document.getElementById("health_panel").src = "assets/healthbox.png";
-  document.getElementById("skill_panel").src = "skillbox.png";
+  document.getElementById("skill_panel").src = "assets/skillbox.png";
   document.getElementById("cash_panel").src = "assets/cashbox.png";
 
   document.getElementById("pic1").style.top = "10px";
@@ -106,7 +106,7 @@ function print_rm() {
 
 //placing the DON
 function don() {
-  document.getElementById("don").src = "donatello.png";
+  document.getElementById("don").src = "assets/donatello.png";
   document.getElementById("don").style.left = (don_left[px] - 7) + "px";
   document.getElementById("don").style.top = (don_top[px] - 7) + "px";
 }
@@ -165,7 +165,7 @@ function move(yy) {
     document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
 
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "monster.png";
+    document.getElementById("monster").src = "assets/monster.png";
   }
 
   //death monster
@@ -179,7 +179,7 @@ function move(yy) {
     document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
 
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "death.png";
+    document.getElementById("monster").src = "assets/death.png";
   }
 
 
