@@ -60,7 +60,7 @@ function start() {
   document.getElementById("slot3").src = "potion_slot.png";
   document.getElementById("slot4").src = "potion_slot.png";
   document.getElementById("compass").src = "compass.png";
-  document.getElementById("health_panel").src = "healthbox.png";
+  document.getElementById("health_panel").src = "assets/healthbox.png";
   document.getElementById("skill_panel").src = "skillbox.png";
   document.getElementById("cash_panel").src = "cashbox.png";
 
