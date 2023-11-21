@@ -1,6 +1,8 @@
-var px, oldpx, skill, health, cash, msg, mon_sk, mon_he, dead, levelup;
+var px, oldpx, skill, health, cash, msg, mon_sk, mon_he, dead, levelup, donut, item, key, chest_rm;
 
 level = 1;
+
+const donut_stash = [0, 0, 0, 0]
 
 //co-ords
 const don_left = [0,
@@ -19,50 +21,55 @@ const don_top = [0,
   465, 465, 465, 465, 465,]
 
 const room_map = [0,
-  1, 1, 1, 1, 1,
-  1, 1, 2, 2, 1,
-  1, 1, 1, 1, 1,
-  1, 1, 1, 1, 1,
-  1, 1, 1, 1, 3]
+  1, 4, 1, 1, 1,
+  1, 1, 2, 1, 1,
+  5, 2, 4, 2, 1,
+  1, 1, 2, 1, 2,
+  1, 5, 1, 2, 3]
 
-const room_name = ["assets/brick.png", "assets/gold.png", "assets/redsquare.png", "assets/blacksquare.png", "assets/greensquare.png", "assets/spiral.png"]
-
+const room_name = ["brick.png", "gold.png", "redsquare.png", "blacksquare.png", "greensquare.png", "redsquare.png", "gold.png", "gold.png", "gold.png", "spiral.png"]
 
 const mx = [
   "Welcome to the Dungeon! <br>It's gonna get messy! Let's go!",
   "This is an empty room... <br>Choose another",
   "It's a monster! Fight (0) <br>or retreat (X) to previous room?",
   "It's Death himself! Fight (0) <br>or retreat (X) to previous room?",
-  "room4",
-  "room5",
-  "room6",
-  "room7",
-  "room8",
+  "Roulette Wheel. Fancy your luck? SPIN or LEAVE",
+  "You meet a mysterious fellow. <br>FIGHT or RETREAT?",
+  "You see a chest, but it's locked. <br> Time to move on",
+  "You see a chest, but luckily you have the key! Have some cash!",
+  "Just an empty room with an empty chest. Time to move on.",
   "room9",
   "room10",
-  "You killed that bad boy! <br> Upskill and move on buddy!",
+  "You killed that bad boy! Upskill, take a donut and move on buddy!",
   "SORRY, YOU'RE DEAD <br> Hit NEW to play again.",
   "You've killed Death and completed the level. Hit NEXT for next level",
   "Whoa! That was fun, where next?",
   "You killed death. Time for the next floor <br> It's going to be tougher this time!",
-  "Death awaits... <br>Destroy it to enter the next level"]
+  "Death awaits... <br>Destroy it to enter the next level",
+  "Nice work. You win $5",
+  "Bad luck. You lose $2",
+  "Fair enough. Try your luck another day!",
+  "Hmmm... He seemed kinda nice. <br>Lose a skill point and move on.",
+  "Very wise. Not everyone's an enemy. <br> Here have a special key."
+]
 
 reset(); start();
 
 
 function start() {
-  document.getElementById("message").src = "assets/message.png";
-  document.getElementById("level_btn").src = "assets/orange-btn.png";
-  document.getElementById("sidepanel").src = "assets/panel_new.png"
-  document.getElementById("roompanel").src = "assets/message.png"
-  document.getElementById("slot1").src = "assets/potion_slot.png";
-  document.getElementById("slot2").src = "assets/potion_slot.png";
-  document.getElementById("slot3").src = "assets/potion_slot.png";
-  document.getElementById("slot4").src = "assets/potion_slot.png";
-  document.getElementById("compass").src = "assets/compass.png";
-  document.getElementById("health_panel").src = "assets/healthbox.png";
-  document.getElementById("skill_panel").src = "assets/skillbox.png";
-  document.getElementById("cash_panel").src = "assets/cashbox.png";
+  document.getElementById("message").src = "message.png";
+  document.getElementById("level_btn").src = "orange-btn.png";
+  document.getElementById("sidepanel").src = "panel_new.png"
+  document.getElementById("roompanel").src = "message.png"
+  document.getElementById("slot1").src = "potion_slot.png";
+  document.getElementById("slot2").src = "potion_slot.png";
+  document.getElementById("slot3").src = "potion_slot.png";
+  document.getElementById("slot4").src = "potion_slot.png";
+  document.getElementById("compass").src = "compass.png";
+  document.getElementById("health_panel").src = "healthbox.png";
+  document.getElementById("skill_panel").src = "skillbox.png";
+  document.getElementById("cash_panel").src = "cashbox.png";
 
   document.getElementById("pic1").style.top = "10px";
   document.getElementById("pic1").style.left = "10px";
@@ -83,7 +90,7 @@ function start() {
   };
   don();
   enadir();
-  disXO();
+  disAB(); disCD();
   clear_monster();
 
   document.getElementById("skill_head").innerHTML = "SKILL";
@@ -106,7 +113,7 @@ function print_rm() {
 
 //placing the DON
 function don() {
-  document.getElementById("don").src = "assets/donatello.png";
+  document.getElementById("don").src = "donatello.png";
   document.getElementById("don").style.left = (don_left[px] - 7) + "px";
   document.getElementById("don").style.top = (don_top[px] - 7) + "px";
 }
@@ -152,25 +159,36 @@ function move(yy) {
     document.getElementById("buttb").innerHTML = "&#9635";
     return;
   }
+  if (room_map[px] == 8) {
+    document.getElementById("monster").style.visibility = "visible";
+    document.getElementById("monster").src = "chest_empty.png";
+    enadir();
+    document.getElementById("butta").innerHTML = "&#9635";
+    document.getElementById("buttb").innerHTML = "&#9635";
+    return;
+  }
 
-  //monster
+
+
+
+  //small monster
   if (room_map[px] == 2) {
-    message(); enaXO();
+    message(); enaAB();
     document.getElementById("butta").innerHTML = "FIGHT";
     document.getElementById("buttb").innerHTML = "RETREAT";
 
-    mon_sk = 5; mon_he = 20;
+    mon_sk = 5; mon_he = 10;
     document.getElementById("mon_skill").innerHTML = "SKILL: " + mon_sk;
 
     document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
 
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "assets/monster.png";
+    document.getElementById("monster").src = "monster.png";
   }
 
-  //death monster
+  //big monster
   if (room_map[px] == 3) {
-    message(); enaXO();
+    message(); enaAB();
     document.getElementById("butta").innerHTML = "FIGHT";
     document.getElementById("buttb").innerHTML = "RETREAT";
     mon_sk = 10; mon_he = 10;
@@ -179,44 +197,67 @@ function move(yy) {
     document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
 
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "assets/death.png";
+    document.getElementById("monster").src = "death.png";
   }
 
+  //roulette
+  if (room_map[px] == 4) {
+    enaAB();
+    document.getElementById("butta").innerHTML = "SPIN";
+    document.getElementById("buttb").innerHTML = "LEAVE";
+
+
+    return;
+  }
+
+  //wizard
+  if (room_map[px] == 5) {
+    enaAB(); message();
+    document.getElementById("butta").innerHTML = "FIGHT";
+    document.getElementById("buttb").innerHTML = "RETREAT";
+
+
+    mon_sk = 5; mon_he = 10;
+    document.getElementById("mon_skill").innerHTML = "SKILL: " + mon_sk;
+
+    document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
+
+    document.getElementById("monster").style.visibility = "visible";
+    document.getElementById("monster").src = "wizard2.png";
+  }
+
+  //chest locked
+  if (room_map[px] == 6) {
+    enadir();
+    document.getElementById("monster").style.visibility = "visible";
+    document.getElementById("monster").src = "chest_closed.png";
+  }
+
+  //chest unlocked
+  if (room_map[px] == 7) {
+    enadir();
+    document.getElementById("monster").style.visibility = "visible";
+    document.getElementById("monster").src = "chesty_open.png";
+    cash = cash + 30;
+    update();
+    room_map[px] = 8;
+  }
 
 }
 
-function message() {
-  document.getElementById("message_txt").innerHTML = mx[msg];
-}
-
-function disdir() {
-  document.getElementById("butt_up").style.visibility = "hidden";
-  document.getElementById("butt_rt").style.visibility = "hidden";
-  document.getElementById("butt_dn").style.visibility = "hidden";
-  document.getElementById("butt_lf").style.visibility = "hidden";
-}
-
-function disXO() {
-  document.getElementById("butta").disabled = true;
-  document.getElementById("buttb").disabled = true;
-}
-
-function enaXO() {
-  document.getElementById("butta").disabled = false;
-  document.getElementById("buttb").disabled = false;
-}
-
-function update() {
-  document.getElementById("skill_val").innerHTML = skill;
-  document.getElementById("health_val").innerHTML = health;
-  document.getElementById("cash_val").innerHTML = cash;
-
-}
-
-function btnO() {
+function btnA() {
   //fight monster/ death
-  if (room_map[px] == 2 || room_map[px] == 3) {
+  if (room_map[px] == 2 || room_map[px] == 3 || room_map[px] == 5) {
     fight();
+    if (mon_he == 0 && room_map[px] == 2) { victory() };
+    if (mon_he == 0 && room_map[px] == 5) { wiz_victory() };
+    if (mon_he == 0 && room_map[px] == 3) { stage_victory() };
+    if (health <= 0) { death() };
+  }
+
+  //spin
+  if (room_map[px] == 4) {
+    spin();
     if (mon_he == 0 && room_map[px] == 2) { victory() };
     if (mon_he == 0 && room_map[px] == 3) { stage_victory() };
     if (health <= 0) { death() };
@@ -226,7 +267,7 @@ function btnO() {
 
 }
 
-function btnX() {
+function btnB() {
   //restart
   if (dead == 1) {
     reset(); start()
@@ -249,7 +290,7 @@ function btnX() {
     print_rm();
     don();
     enadir();
-    disXO();
+    disAB();
     msg = room_map[px]; message();
     clear_monster();
     document.getElementById("butta").innerHTML = "&#9635";
@@ -257,15 +298,103 @@ function btnX() {
     return;
   }
 
+  //wizard retreat
+  if (room_map[px] == 5) {
+    enadir();
+    msg = 21; message();
+    room_map[px] = 1; print_rm();
+    px = oldpx;
+    print_rm();
+    don();
+    enadir();
+    disAB();
+    clear_monster();
+    document.getElementById("butta").innerHTML = "&#9635";
+    document.getElementById("buttb").innerHTML = "&#9635";
+    document.getElementById("slot" + item).src = "keys.png";
+    item++; key = 1; room_map[chest_rm] = 7;
+
+    return;
+
+  }
+
+  //roulette leave
+  if (room_map[px] == 4) {
+    enadir();
+    msg = 19; message();
+    document.getElementById("butta").innerHTML = "&#9635";
+    document.getElementById("buttb").innerHTML = "&#9635";
+    disAB();
+
+    return;
+  }
+
+}
+function message() {
+  document.getElementById("message_txt").innerHTML = mx[msg];
+  return;
+}
+
+function disdir() {
+  document.getElementById("butt_up").style.visibility = "hidden";
+  document.getElementById("butt_rt").style.visibility = "hidden";
+  document.getElementById("butt_dn").style.visibility = "hidden";
+  document.getElementById("butt_lf").style.visibility = "hidden";
+}
+
+function disAB() {
+  document.getElementById("butta").disabled = true;
+  document.getElementById("buttb").disabled = true;
+}
+
+function disCD() {
+  document.getElementById("buttc").disabled = true;
+  document.getElementById("buttd").disabled = true;
+}
+
+function enaAB() {
+  document.getElementById("butta").disabled = false;
+  document.getElementById("buttb").disabled = false;
+}
+
+function enaCD() {
+  document.getElementById("buttc").disabled = false;
+  document.getElementById("buttd").disabled = false;
+
+}
+
+
+function update() {
+  document.getElementById("skill_val").innerHTML = skill;
+  document.getElementById("health_val").innerHTML = health;
+  document.getElementById("cash_val").innerHTML = cash;
+
 }
 
 function fight() {
   xxx = (Math.floor(Math.random() * 3));
 
-  if (xxx == 0) { health-- } else { mon_he-- };
-  update();
-  document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
+  if (xxx == 0) {
+    health--;
+    document.getElementById("health_val").style.color = "red";
+    document.getElementById("health_val").innerHTML = health;
+    setTimeout(back_don, 100);
+
+  } else {
+    mon_he--;
+    document.getElementById("mon_health").style.color = "red";
+    document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
+    setTimeout(back_mon, 100);
+  };
   return;
+}
+
+function spin() {
+  xxx = (Math.floor(Math.random() * 4));
+
+  if (xxx == 0) { cash = cash + 5; update(); msg = 17; message() }
+  else { cash = cash - 2; update(); msg = 18; message() };
+
 }
 
 function victory() {
@@ -273,8 +402,28 @@ function victory() {
   room_map[px] = 1; print_rm();
   msg = 11; message();
   enadir();
-  disXO();
+  disAB();
+  document.getElementById("butta").innerHTML = "&#9635";
+  document.getElementById("buttb").innerHTML = "&#9635";
+  document.getElementById("monster").src = "tomb.png";
 
+  if (donut == 5) { return };
+
+  donut_xxx = (Math.floor(Math.random() * 3));
+  donut_stash[item - 1] = donut_xxx;
+  document.getElementById("slot" + item).src = donut_xxx + "donut.png"; item++;
+  return;
+}
+
+function wiz_victory() {
+  skill--; update();
+  room_map[px] = 1; print_rm();
+  msg = 20; message();
+  enadir();
+  disAB();
+  document.getElementById("butta").innerHTML = "&#9635";
+  document.getElementById("buttb").innerHTML = "&#9635";
+  document.getElementById("monster").src = "tomb.png";
   return;
 }
 
@@ -297,13 +446,8 @@ function death() {
 }
 
 function reset() {
-  px = 1; oldpx = 1; skill = 10; health = 23; cash = 25; msg = 0; dead = 0; levelup = 0;
-  const room_map = [0,
-    1, 1, 1, 1, 1,
-    1, 1, 2, 2, 1,
-    1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1];
+  px = 1; oldpx = 1; skill = 10; health = 99; cash = 25; msg = 0; dead = 0; levelup = 0; item = 1; key = 0; chest_rm = 16; room_map[chest_rm] = 6;
+
   document.getElementById("butta").style.visibility = "visible";
 
 }
@@ -316,4 +460,13 @@ function stage_victory() {
 
   disdir(); levelup = 1; level++;
 
+}
+
+function back_mon() {
+  document.getElementById("mon_health").style.color = "black"; document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
+}
+
+function back_don() {
+  document.getElementById("health_val").style.color = "beige";
+  document.getElementById("health_val").innerHTML = health;
 }
