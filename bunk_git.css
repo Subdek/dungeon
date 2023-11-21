@@ -46,7 +46,7 @@ body {
   top: 20px;
   left: 580px;
   width: 350px;
-  height: 330px;
+  height: 280px;
 }
 
 
@@ -236,24 +236,24 @@ body {
 
 #mon_skill {
   position: fixed;
-  top: 180px;
-  left: 670px;
-  font-size: 40px;
+  top: 200px;
+  left: 610px;
+  font-size: 30px;
   color: black;
 }
 
 #mon_health {
   position: fixed;
-  top: 230px;
-  left: 655px;
-  font-size: 40px;
+  top: 200px;
+  left: 740px;
+  font-size: 30px;
   color: black;
 }
 
 #butta {
   position: fixed;
   border-radius: 10px;
-  top: 360px;
+  top: 310px;
   left: 580px;
   width: 170px;
   height: 50px;
@@ -268,7 +268,7 @@ body {
 #buttb {
   position: fixed;
   border-radius: 10px;
-  top: 360px;
+  top: 310px;
   left: 760px;
   width: 170px;
   height: 50px;
@@ -276,5 +276,34 @@ body {
   font-weight: bold;
   background-color: black;
   color: white;
+
+}
+
+#buttc {
+  position: fixed;
+  border-radius: 10px;
+  top: 365px;
+  left: 580px;
+  width: 170px;
+  height: 50px;
+  font-size: xx-large;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+
+
+}
+
+#buttd {
+  position: fixed;
+  border-radius: 10px;
+  top: 365px;
+  left: 760px;
+  width: 170px;
+  height: 50px;
+  font-size: xx-large;
+  font-weight: bold;
+  background-color: white;
+  color: black;
 
 }
