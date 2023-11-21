@@ -27,7 +27,7 @@ const room_map = [0,
   1, 1, 2, 1, 2,
   1, 5, 1, 2, 3]
 
-const room_name = ["brick.png", "gold.png", "redsquare.png", "blacksquare.png", "greensquare.png", "redsquare.png", "gold.png", "gold.png", "gold.png", "spiral.png"]
+const room_name = ["assets/brick.png", "assets/gold.png", "assets/redsquare.png", "assets/blacksquare.png", "assets/greensquare.png", "assets/redsquare.png", "assets/gold.png", "assets/gold.png", "assets/gold.png", "assets/spiral.png"]
 
 const mx = [
   "Welcome to the Dungeon! <br>It's gonna get messy! Let's go!",
@@ -58,18 +58,18 @@ reset(); start();
 
 
 function start() {
-  document.getElementById("message").src = "message.png";
-  document.getElementById("level_btn").src = "orange-btn.png";
-  document.getElementById("sidepanel").src = "panel_new.png"
-  document.getElementById("roompanel").src = "message.png"
-  document.getElementById("slot1").src = "potion_slot.png";
-  document.getElementById("slot2").src = "potion_slot.png";
-  document.getElementById("slot3").src = "potion_slot.png";
-  document.getElementById("slot4").src = "potion_slot.png";
-  document.getElementById("compass").src = "compass.png";
-  document.getElementById("health_panel").src = "healthbox.png";
-  document.getElementById("skill_panel").src = "skillbox.png";
-  document.getElementById("cash_panel").src = "cashbox.png";
+  document.getElementById("message").src = "assets/message.png";
+  document.getElementById("level_btn").src = "assets/orange-btn.png";
+  document.getElementById("sidepanel").src = "assets/panel_new.png"
+  document.getElementById("roompanel").src = "assets/message.png"
+  document.getElementById("slot1").src = "assets/potion_slot.png";
+  document.getElementById("slot2").src = "assets/potion_slot.png";
+  document.getElementById("slot3").src = "assets/potion_slot.png";
+  document.getElementById("slot4").src = "assets/potion_slot.png";
+  document.getElementById("compass").src = "assets/compass.png";
+  document.getElementById("health_panel").src = "assets/healthbox.png";
+  document.getElementById("skill_panel").src = "assets/skillbox.png";
+  document.getElementById("cash_panel").src = "assets/cashbox.png";
 
   document.getElementById("pic1").style.top = "10px";
   document.getElementById("pic1").style.left = "10px";
@@ -113,7 +113,7 @@ function print_rm() {
 
 //placing the DON
 function don() {
-  document.getElementById("don").src = "donatello.png";
+  document.getElementById("don").src = "assets/donatello.png";
   document.getElementById("don").style.left = (don_left[px] - 7) + "px";
   document.getElementById("don").style.top = (don_top[px] - 7) + "px";
 }
@@ -161,7 +161,7 @@ function move(yy) {
   }
   if (room_map[px] == 8) {
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "chest_empty.png";
+    document.getElementById("monster").src = "assets/chest_empty.png";
     enadir();
     document.getElementById("butta").innerHTML = "&#9635";
     document.getElementById("buttb").innerHTML = "&#9635";
@@ -183,7 +183,7 @@ function move(yy) {
     document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
 
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "monster.png";
+    document.getElementById("monster").src = "assets/monster.png";
   }
 
   //big monster
@@ -197,7 +197,7 @@ function move(yy) {
     document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
 
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "death.png";
+    document.getElementById("monster").src = "assets/death.png";
   }
 
   //roulette
@@ -223,21 +223,21 @@ function move(yy) {
     document.getElementById("mon_health").innerHTML = "HEALTH: " + mon_he;
 
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "wizard2.png";
+    document.getElementById("monster").src = "assets/wizard2.png";
   }
 
   //chest locked
   if (room_map[px] == 6) {
     enadir();
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "chest_closed.png";
+    document.getElementById("monster").src = "assets/chest_closed.png";
   }
 
   //chest unlocked
   if (room_map[px] == 7) {
     enadir();
     document.getElementById("monster").style.visibility = "visible";
-    document.getElementById("monster").src = "chesty_open.png";
+    document.getElementById("monster").src = "assets/chesty_open.png";
     cash = cash + 30;
     update();
     room_map[px] = 8;
@@ -405,13 +405,13 @@ function victory() {
   disAB();
   document.getElementById("butta").innerHTML = "&#9635";
   document.getElementById("buttb").innerHTML = "&#9635";
-  document.getElementById("monster").src = "tomb.png";
+  document.getElementById("monster").src = "assets/tomb.png";
 
   if (donut == 5) { return };
 
   donut_xxx = (Math.floor(Math.random() * 3));
   donut_stash[item - 1] = donut_xxx;
-  document.getElementById("slot" + item).src = donut_xxx + "donut.png"; item++;
+  document.getElementById("slot" + item).src = donut_xxx + "assets/donut.png"; item++;
   return;
 }
 
@@ -423,7 +423,7 @@ function wiz_victory() {
   disAB();
   document.getElementById("butta").innerHTML = "&#9635";
   document.getElementById("buttb").innerHTML = "&#9635";
-  document.getElementById("monster").src = "tomb.png";
+  document.getElementById("monster").src = "assets/tomb.png";
   return;
 }
 
