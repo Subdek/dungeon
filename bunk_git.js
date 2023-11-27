@@ -73,7 +73,7 @@ function start() {
 
   document.getElementById("pic1").style.top = "10px";
   document.getElementById("pic1").style.left = "10px";
-  document.getElementById("pic1").src = "gold.png";
+  document.getElementById("pic1").src = "assets/gold.png";
 
   document.getElementById("butta").innerHTML = "&#9635";
   document.getElementById("buttb").innerHTML = "&#9635";
