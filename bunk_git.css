@@ -4,7 +4,7 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* 25 caves */
+/* 30 caves */
 .dung_images img {
   border-radius: 15px;
   position: fixed;
@@ -17,7 +17,7 @@ body {
   position: fixed;
   top: 560px;
   left: 10px;
-  width: 540px;
+  width: 650px;
   height: 160px;
 }
 
@@ -25,8 +25,8 @@ body {
 #sidepanel {
   position: fixed;
   top: 10px;
-  left: 565px;
-  width: 380px;
+  left: 675px;
+  width: 390px;
   height: 700px;
   border-radius: 25px;
 
@@ -35,7 +35,7 @@ body {
 #monster {
   position: fixed;
   top: 65px;
-  left: 625px;
+  left: 745px;
   width: 260px;
   height: 150px;
 
@@ -44,7 +44,7 @@ body {
 #roompanel {
   position: fixed;
   top: 20px;
-  left: 580px;
+  left: 695px;
   width: 350px;
   height: 280px;
 }
@@ -54,8 +54,8 @@ body {
 #message_txt {
   position: fixed;
   top: 590px;
-  left: 30px;
-  width: 500px;
+  left: 50px;
+  width: 580px;
   text-align: center;
   font-size: 30px;
 }
@@ -63,8 +63,8 @@ body {
 #level_btn {
   position: fixed;
   top: 570px;
-  left: 130px;
-  width: 340px;
+  left: 150px;
+  width: 410px;
   height: 40px;
   border-radius: 15px;
 
@@ -74,8 +74,8 @@ body {
 #level_hd {
   position: fixed;
   top: 545px;
-  left: 130px;
-  width: 340px;
+  left: 260px;
+  width: 210px;
   text-align: center;
   font-size: 30px;
 }
@@ -93,30 +93,30 @@ body {
 
 #butt_up {
   top: 555px;
-  left: 831px;
+  left: 950px;
   padding: 5px 15px;
 }
 
 #butt_rt {
   top: 605px;
-  left: 881px;
+  left: 1005px;
 }
 
 #butt_dn {
   top: 655px;
-  left: 831px;
+  left: 950px;
   padding: 5px 15px;
 }
 
 #butt_lf {
   top: 605px;
-  left: 780px;
+  left: 895px;
 }
 
 #compass {
   position: fixed;
   top: 545px;
-  left: 774px;
+  left: 892px;
   width: 160px;
   height: 160px;
 }
@@ -130,7 +130,7 @@ body {
 #slot1 {
   position: fixed;
   top: 540px;
-  left: 575px;
+  left: 700px;
   width: 85px;
   height: 85px;
 }
@@ -138,7 +138,7 @@ body {
 #slot2 {
   position: fixed;
   top: 540px;
-  left: 660px;
+  left: 785px;
   width: 85px;
   height: 85px;
 }
@@ -146,7 +146,7 @@ body {
 #slot3 {
   position: fixed;
   top: 620px;
-  left: 575px;
+  left: 700px;
   width: 85px;
   height: 85px;
 }
@@ -154,7 +154,7 @@ body {
 #slot4 {
   position: fixed;
   top: 620px;
-  left: 660px;
+  left: 785px;
   width: 85px;
   height: 85px;
 }
@@ -163,7 +163,7 @@ body {
   position: fixed;
   border-radius: 25px;
   top: 420px;
-  left: 580px;
+  left: 700px;
   width: 110px;
   height: 110px;
 }
@@ -172,7 +172,7 @@ body {
   position: fixed;
   border-radius: 25px;
   top: 420px;
-  left: 700px;
+  left: 820px;
   width: 110px;
   height: 110px;
 }
@@ -181,7 +181,7 @@ body {
   position: fixed;
   border-radius: 25px;
   top: 420px;
-  left: 820px;
+  left: 940px;
   width: 110px;
   height: 110px;
 }
@@ -189,7 +189,7 @@ body {
 #skill_head {
   position: fixed;
   top: 400px;
-  left: 606px;
+  left: 726px;
   font-size: 25px;
   color: beige;
 }
@@ -197,7 +197,7 @@ body {
 #skill_val {
   position: fixed;
   top: 380px;
-  left: 598px;
+  left: 718px;
   font-size: 70px;
   color: beige;
 }
@@ -205,7 +205,7 @@ body {
 #health_head {
   position: fixed;
   top: 400px;
-  left: 712px;
+  left: 832px;
   font-size: 25px;
   color: beige;
 }
@@ -213,7 +213,7 @@ body {
 #health_val {
   position: fixed;
   top: 380px;
-  left: 718px;
+  left: 838px;
   font-size: 70px;
   color: beige;
 }
@@ -221,7 +221,7 @@ body {
 #cash_head {
   position: fixed;
   top: 400px;
-  left: 846px;
+  left: 966px;
   font-size: 25px;
   color: beige;
 }
@@ -229,7 +229,7 @@ body {
 #cash_val {
   position: fixed;
   top: 380px;
-  left: 838px;
+  left: 958px;
   font-size: 70px;
   color: beige;
 }
@@ -237,7 +237,7 @@ body {
 #mon_skill {
   position: fixed;
   top: 200px;
-  left: 610px;
+  left: 730px;
   font-size: 30px;
   color: black;
 }
@@ -245,7 +245,7 @@ body {
 #mon_health {
   position: fixed;
   top: 200px;
-  left: 740px;
+  left: 860px;
   font-size: 30px;
   color: black;
 }
@@ -254,7 +254,7 @@ body {
   position: fixed;
   border-radius: 10px;
   top: 310px;
-  left: 580px;
+  left: 700px;
   width: 170px;
   height: 50px;
   font-size: xx-large;
@@ -269,7 +269,7 @@ body {
   position: fixed;
   border-radius: 10px;
   top: 310px;
-  left: 760px;
+  left: 880px;
   width: 170px;
   height: 50px;
   font-size: xx-large;
@@ -283,7 +283,7 @@ body {
   position: fixed;
   border-radius: 10px;
   top: 365px;
-  left: 580px;
+  left: 700px;
   width: 170px;
   height: 50px;
   font-size: xx-large;
@@ -298,7 +298,7 @@ body {
   position: fixed;
   border-radius: 10px;
   top: 365px;
-  left: 760px;
+  left: 880px;
   width: 170px;
   height: 50px;
   font-size: xx-large;
